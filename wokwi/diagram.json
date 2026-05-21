@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "author": "Okaru",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 200, "left": 0, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": -150,
+      "left": 100,
+      "attrs": { "pins": "full" }
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": 100,
+      "left": 500,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-servo",
+      "id": "servo1",
+      "top": -200,
+      "left": 600,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -10,
+      "left": 380,
+      "attrs": { "value": "220" }
+    }
+  ],
+  "connections": [
+    [ "lcd1:VSS", "uno:GND.1", "black",   [ "v0" ] ],
+    [ "lcd1:VDD", "uno:5V",    "red",     [ "v0" ] ],
+    [ "lcd1:V0",  "uno:GND.1", "black",   [ "v0" ] ],
+    [ "lcd1:RS",  "uno:12",    "green",   [ "v0" ] ],
+    [ "lcd1:RW",  "uno:GND.1", "black",   [ "v0" ] ],
+    [ "lcd1:E",   "uno:11",    "blue",    [ "v0" ] ],
+    [ "lcd1:D4",  "uno:10",    "purple",  [ "v0" ] ],
+    [ "lcd1:D5",  "uno:9",     "magenta", [ "v0" ] ],
+    [ "lcd1:D6",  "uno:8",     "yellow",  [ "v0" ] ],
+    [ "lcd1:D7",  "uno:7",     "gray",    [ "v0" ] ],
+    [ "lcd1:A",   "r1:1",      "red",     [ "v0" ] ],
+    [ "r1:2",     "uno:5V",    "red",     [ "v0" ] ],
+    [ "lcd1:K",   "uno:GND.1", "black",   [ "v0" ] ],
+
+    [ "keypad1:R1", "uno:5",  "orange", [ "v0" ] ],
+    [ "keypad1:R2", "uno:4",  "orange", [ "v0" ] ],
+    [ "keypad1:R3", "uno:3",  "orange", [ "v0" ] ],
+    [ "keypad1:R4", "uno:2",  "orange", [ "v0" ] ],
+    [ "keypad1:C1", "uno:A3", "cyan",   [ "v0" ] ],
+    [ "keypad1:C2", "uno:A2", "cyan",   [ "v0" ] ],
+    [ "keypad1:C3", "uno:A1", "cyan",   [ "v0" ] ],
+    [ "keypad1:C4", "uno:A0", "cyan",   [ "v0" ] ],
+
+    [ "servo1:V+",  "uno:5V",    "red",    [ "v0" ] ],
+    [ "servo1:GND", "uno:GND.1", "black",  [ "v0" ] ],
+    [ "servo1:PWM", "uno:6",     "orange", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
